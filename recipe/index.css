@@ -1,0 +1,35 @@
+body{
+  background-image: url("http://www.omnomsauce.com/wp-content/uploads/2013/06/cherry-pie_20130705_0006.jpg");
+  background-size:cover;
+  background-repeat:no-repeat;
+}
+
+#hello{
+  position:absolute;
+  top:10%;
+  left:0;
+  text-align:center;
+  width:100%;
+  font-size:130px;
+  color:#c3272b
+}
+
+#link{
+  position:absolute;
+  top:65%;
+  left:0;
+  text-align:center;
+  width:100%;
+  font-size:35px;
+  color:#c3272b;
+  text-decoration:underline
+}
+
+#maker{
+  position:absolute;
+  bottom:0;
+  text-align:center;
+  width:100%;
+  font-size:25px;
+  color:#c3272b
+}
