@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>计算器</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" style="text/css" href="style.css">
+  <script src="myfile.js" type="text/javascript"></script>
+</head>
+
+<body>
+  <div id="positioner">
+    <div id="container">
+      <div id="top">
+        <div id="screen">
+          <p id="show"></p>
+        </div>
+      </div>
+
+      <div id="bottom">
+        <div class="column">
+          <div id="seven"  onclick="input('7')" onmousedown="mDown(this)" onmouseup="mUp(this)">
+            <p>7</p>
+          </div>
+          <div id="four" onclick="input('4')" onmousedown="mDown(this)" onmouseup="mUp(this)">
+            <p>4</p>
+          </div>
+          <div id="one" onclick="input('1')" onmousedown="mDown(this)" onmouseup="mUp(this)">
+            <p>1</p>
+          </div>
+          <div id="zero" onclick="input('0')" onmousedown="mDown(this)" onmouseup="mUp(this)">
+            <p>0</p>
+          </div>
+          <div id="lBracket" onclick="input('(')" onmousedown="mDown(this)" onmouseup="mUp(this)">
+            <p>(</p>
+          </div>
+        </div>
+
+        <div class="column">
+          <div id="eight" onclick="input('8')" onmousedown="mDown(this)" onmouseup="mUp(this)">
+            <p>8</p>
+          </div>
+          <div id="five" onclick="input('5')" onmousedown="mDown(this)" onmouseup="mUp(this)">
+            <p>5</p>
+          </div>
+          <div id="two" onclick="input('2')" onmousedown="mDown(this)" onmouseup="mUp(this)">
+            <p>2</p>
+          </div>
+          <div id="point" onclick="input('.')" onmousedown="mDown(this)" onmouseup="mUp(this)">
+            <p>.</p>
+          </div>
+          <div id="rBracket" onclick="input(')')" onmousedown="mDown(this)" onmouseup="mUp(this)">
+            <p>)</p>
+          </div>
+        </div>
+
+        <div class="column">
+          <div id="nine" onclick="input('9')" onmousedown="mDown(this)" onmouseup="mUp(this)">
+            <p>9</p>
+          </div>
+          <div id="six" onclick="input('6')" onmousedown="mDown(this)" onmouseup="mUp(this)">
+            <p>6</p>
+          </div>
+          <div id="three" onclick="input('3')" onmousedown="mDown(this)" onmouseup="mUp(this)">
+            <p>3</p>
+          </div>
+          <div id="backSpace" onclick="backSpace()" onmousedown="mDown(this)" onmouseup="mUp(this)">
+            <p>←</p>
+          </div>
+          <div id="clear" onclick="clearAll()" onmousedown="mDown(this)" onmouseup="mUp(this)">
+            <p>CE</p>
+          </div>
+        </div>
+
+        <div class="column">
+          <div id="divide" onclick="input('/')" onmousedown="mDown(this)" onmouseup="mUp(this)">
+            <p>/</p>
+          </div>
+          <div id="multiply" onclick="input('*')" onmousedown="mDown(this)" onmouseup="mUp(this)">
+            <p>*</p>
+          </div>
+          <div id="minus" onclick="input('-')" onmousedown="mDown(this)" onmouseup="mUp(this)">
+            <p>-</p>
+          </div>
+          <div id="add" onclick="input('+')" onmousedown="mDown(this)" onmouseup="mUp(this)">
+            <p>+</p>
+          </div>
+          <div id="is" onclick="is()" onmousedown="mDown(this)" onmouseup="mUp(this)">
+            <p>=</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+  str = new String;
+
+  function mDown(obj) {
+    obj.style.backgroundColor = "rgb(152, 152, 152)";
+  }
+
+  function mUp(obj) {
+    obj.style.backgroundColor = "rgb(217,217,217)";
+  }
+
+  function input(n) {
+    str += n;
+    document.getElementById("show").innerHTML = str;
+  }
+
+  function backSpace() {
+    str = str.substring(0, str.length - 1);
+    document.getElementById("show").innerHTML = str;
+  }
+
+  function clearAll() { //不能叫clear()
+    str = new String;
+    document.getElementById("show").innerHTML = str;
+  }
+
+  function is() {
+    try {
+      str = eval(str);
+    } catch (exception) {
+      alert(exception);
+    }
+    document.getElementById("show").innerHTML = str;
+
+  }
+  </script>
+</body>
+
+</html>
