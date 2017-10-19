@@ -19,116 +19,79 @@
 
       <div id="bottom">
         <div class="column">
-          <div id="seven"  onclick="input('7')" onmousedown="mDown(this)" onmouseup="mUp(this)">
+          <div id="seven">
             <p>7</p>
           </div>
-          <div id="four" onclick="input('4')" onmousedown="mDown(this)" onmouseup="mUp(this)">
+          <div id="four">
             <p>4</p>
           </div>
-          <div id="one" onclick="input('1')" onmousedown="mDown(this)" onmouseup="mUp(this)">
+          <div id="one">
             <p>1</p>
           </div>
-          <div id="zero" onclick="input('0')" onmousedown="mDown(this)" onmouseup="mUp(this)">
+          <div id="zero">
             <p>0</p>
           </div>
-          <div id="lBracket" onclick="input('(')" onmousedown="mDown(this)" onmouseup="mUp(this)">
+          <div id="lBracket">
             <p>(</p>
           </div>
         </div>
 
         <div class="column">
-          <div id="eight" onclick="input('8')" onmousedown="mDown(this)" onmouseup="mUp(this)">
+          <div id="eight">
             <p>8</p>
           </div>
-          <div id="five" onclick="input('5')" onmousedown="mDown(this)" onmouseup="mUp(this)">
+          <div id="five">
             <p>5</p>
           </div>
-          <div id="two" onclick="input('2')" onmousedown="mDown(this)" onmouseup="mUp(this)">
+          <div id="two">
             <p>2</p>
           </div>
-          <div id="point" onclick="input('.')" onmousedown="mDown(this)" onmouseup="mUp(this)">
+          <div id="point">
             <p>.</p>
           </div>
-          <div id="rBracket" onclick="input(')')" onmousedown="mDown(this)" onmouseup="mUp(this)">
+          <div id="rBracket">
             <p>)</p>
           </div>
         </div>
 
         <div class="column">
-          <div id="nine" onclick="input('9')" onmousedown="mDown(this)" onmouseup="mUp(this)">
+          <div id="nine">
             <p>9</p>
           </div>
-          <div id="six" onclick="input('6')" onmousedown="mDown(this)" onmouseup="mUp(this)">
+          <div id="six">
             <p>6</p>
           </div>
-          <div id="three" onclick="input('3')" onmousedown="mDown(this)" onmouseup="mUp(this)">
+          <div id="three">
             <p>3</p>
           </div>
-          <div id="backSpace" onclick="backSpace()" onmousedown="mDown(this)" onmouseup="mUp(this)">
+          <div id="backSpace">
             <p>←</p>
           </div>
-          <div id="clear" onclick="clearAll()" onmousedown="mDown(this)" onmouseup="mUp(this)">
+          <div id="clear">
             <p>CE</p>
           </div>
         </div>
 
         <div class="column">
-          <div id="divide" onclick="input('/')" onmousedown="mDown(this)" onmouseup="mUp(this)">
+          <div id="divide">
             <p>/</p>
           </div>
-          <div id="multiply" onclick="input('*')" onmousedown="mDown(this)" onmouseup="mUp(this)">
+          <div id="multiply">
             <p>*</p>
           </div>
-          <div id="minus" onclick="input('-')" onmousedown="mDown(this)" onmouseup="mUp(this)">
+          <div id="minus">
             <p>-</p>
           </div>
-          <div id="add" onclick="input('+')" onmousedown="mDown(this)" onmouseup="mUp(this)">
+          <div id="add">
             <p>+</p>
           </div>
-          <div id="is" onclick="is()" onmousedown="mDown(this)" onmouseup="mUp(this)">
+          <div id="is">
             <p>=</p>
           </div>
         </div>
       </div>
     </div>
   </div>
-
-  <script>
-  str = new String;
-
-  function mDown(obj) {
-    obj.style.backgroundColor = "rgb(152, 152, 152)";
-  }
-
-  function mUp(obj) {
-    obj.style.backgroundColor = "rgb(217,217,217)";
-  }
-
-  function input(n) {
-    str += n;
-    document.getElementById("show").innerHTML = str;
-  }
-
-  function backSpace() {
-    str = str.substring(0, str.length - 1);
-    document.getElementById("show").innerHTML = str;
-  }
-
-  function clearAll() { //不能叫clear()
-    str = new String;
-    document.getElementById("show").innerHTML = str;
-  }
-
-  function is() {
-    try {
-      str = eval(str);
-    } catch (exception) {
-      alert(exception);
-    }
-    document.getElementById("show").innerHTML = str;
-
-  }
-  </script>
 </body>
 
 </html>

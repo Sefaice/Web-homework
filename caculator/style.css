@@ -38,6 +38,7 @@ body {
   margin-left: 21px;
   top: 12px;
   border: 2px solid grey;
+  overflow: hidden;
 }
 
 #screen p {
