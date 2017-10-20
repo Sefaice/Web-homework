@@ -208,8 +208,8 @@ function mUp(obj) {
 }
 
 function input(n) {
-  if ((n == '+') || (n == '-') || (n == '*') || (n == '/')) {
-    if ((lastKey == '+') || (lastKey == '-') || (lastKey == '*') || (lastKey == '/')) {
+  if ((n == '+') || (n == '-') || (n == '*') || (n == '/') || (n == ".")) {
+    if ((lastKey == '+') || (lastKey == '-') || (lastKey == '*') || (lastKey == '/') || (lastKey == ".")) {
       str = str.substring(0, str.length - 1);
     }
   }
@@ -238,6 +238,8 @@ function is() {
     alert("invalid input!");
   }
   //var reg=/^(((\d)+(\.*\d+)*)|\+|\-)([/*-+]((\d)+(\.*\d+)*))*$/;
-  str = eval(str);
+  //精度问题
+  //str = parseFloat(eval(str).toFixed(10));用parseFloat和toFixed解决
+  str = parseFloat(eval(str).toFixed(10));
   document.getElementById("show").innerHTML = str;
 }
