@@ -1,5 +1,6 @@
 var str = new String;
 var lastKey = new String;
+var testNum = 1;
 
 window.onload = pageLoad;
 
@@ -14,14 +15,6 @@ function pageLoad() {
   document.getElementById("clear").onclick = clearAll;
 
   document.getElementById('is').onclick = is;
-}
-
-function mDown() {
-  this.style.b
-}
-
-function mUp() {
-  this.style.backgroundColor = "rgb(217,217,217)";
 }
 
 function input() {
@@ -50,14 +43,12 @@ function input() {
 }
 
 function backSpace() {
-  if (str.length == 1) {
+  if ((str.length == 1) || (str == "Infinity")) {
     str = new String;
     document.getElementById("show").innerText = "0";
-  } else {
-    if (str.length == 0) {} else {
-      str = str.substring(0, str.length - 1);
-      document.getElementById("show").innerText = str;
-    }
+  } else if (str.length != 0) {
+    str = str.substring(0, str.length - 1);
+    document.getElementById("show").innerText = str;
   }
 }
 
@@ -75,6 +66,7 @@ function is() {
   try {
     eval(str);
   } catch (exception) {
+    testNum = 0;
     alert("invalid input!");
   }
   /*var reg1=".+";
@@ -86,6 +78,9 @@ function is() {
   }*/
   //精度问题
   //str = parseFloat(eval(str).toFixed(10));用parseFloat和toFixed解决
-  str = parseFloat(eval(str).toFixed(15));
+  if (testNum == 1) {
+    str = parseFloat(eval(str).toFixed(15));
+    str = str.toString();//eval计算后得到的不是string
+  }
   document.getElementById("show").innerText = str;
 }
