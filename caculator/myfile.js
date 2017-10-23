@@ -5,6 +5,7 @@ var testNum = 1;
 window.onload = pageLoad;
 
 function pageLoad() {
+  //也可以用addEventListener来做
   var a = document.getElementsByClassName('unit');
   for (var i = 0; i < a.length; i++) {
     a[i].onclick = input;
@@ -30,8 +31,8 @@ function input() {
     }
   }
   if (str.length == 0) {
-    if (n == '.') {
-      str = "0.";
+    if ((n == '.') || (n == '+') || (n == '-') || (n == '*') || (n == '/')) {
+      str = "0"+n;
     } else {
       str = n;
     }
@@ -80,7 +81,8 @@ function is() {
   //str = parseFloat(eval(str).toFixed(10));用parseFloat和toFixed解决
   if (testNum == 1) {
     str = parseFloat(eval(str).toFixed(15));
-    str = str.toString();//eval计算后得到的不是string
+    str = str.toString(); //eval计算后得到的不是string
   }
   document.getElementById("show").innerText = str;
+  testNum = 1;
 }
