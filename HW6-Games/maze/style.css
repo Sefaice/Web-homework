@@ -1,0 +1,224 @@
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.positioner {
+  width: 600px;
+  height: 100%;
+  margin: auto;
+}
+
+.top {
+  width: 100%;
+  height: 160px;
+}
+
+.top p {
+  font-size: 22px;
+  font-family: Verdana, Tahoma, sans-serif;
+  text-align: center;
+  margin-top: 13px;
+  margin-bottom: 0;
+}
+
+.middle {
+  width: 100%;
+  height: 300px;
+}
+
+.maze {
+  height: 100%;
+  width: 420px;
+  margin: auto;
+}
+
+.col-left {
+  width: 130px;
+  float: left;
+}
+
+.col-middle {
+  width: 160px;
+  float: left;
+}
+
+.col-right {
+  width: 130px;
+  float: left;
+}
+
+.light, .dark {
+  background-color: rgb(220, 220, 220);
+}
+
+/*边框的处理，使边角能重合：box-sizing: border-box是内边框
+这里计算好距离用外边框就可*/
+
+/*col-left*/
+
+.col-left .dark {
+  height: 48px;
+  border-top: 2px solid black;
+  border-left: 2px solid black;
+}
+
+.col-left .top {
+  height: 148px;
+  border-right: 2px solid black;
+  border-left: 2px solid black;
+  border-bottom: 2px solid black;
+  box-sizing: border-box;
+}
+
+.col-left .road {
+  height: 50px;
+}
+
+.col-left .bottom {
+  height: 48px;
+  border-top: 2px solid black;
+  border-left: 2px solid black;
+  border-bottom: 2px solid black;
+}
+
+/*col-middle*/
+
+.col-middle .top {
+  height: 48px;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+}
+
+.col-middle .one {
+  height: 50px;
+  width: 100%;
+}
+
+.col-middle .two {
+  float: left;
+  width: 50px;
+  height: 146px;
+}
+
+.col-middle .middle {
+  position: relative;
+  top: 2px;
+  float: left;
+  width: 60px;
+  height: 146px;
+  border-top: 2px solid black;
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+  box-sizing: border-box;
+}
+
+.col-middle .three {
+  float: left;
+  width: 50px;
+  height: 146px;
+}
+
+.col-middle .left {
+  width: 50px;
+  height: 48px;
+  float: left;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+}
+
+.col-middle .dark {
+  width: 60px;
+  height: 50px;
+  float: left;
+  border-bottom: 2px solid black;
+}
+
+.col-middle .right {
+  width: 50px;
+  height: 48px;
+  float: left;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+}
+
+/*col-right*/
+
+.col-right .dark {
+  height: 48px;
+  border-top: 2px solid black;
+  border-right: 2px solid black;
+}
+
+.col-right .top {
+  height: 146px;
+  width: 126px;
+  border-right: 2px solid black;
+  border-left: 2px solid black;
+  border-bottom: 2px solid black;
+}
+
+.col-right .road {
+  height: 50px;
+}
+
+.col-right .bottom {
+  height: 48px;
+  width: 128px;
+  border-top: 2px solid black;
+  border-right: 2px solid black;
+  border-bottom: 2px solid black;
+}
+
+.road {
+  cursor: pointer;
+}
+
+.start {
+  position: relative;
+  height: 40px;
+  width: 40px;
+  background-color: rgb(122, 224, 100);
+  border: 2px solid black;
+  top: 3px;
+  text-align: center;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.end {
+  position: relative;
+  float: right;
+  height: 40px;
+  width: 40px;
+  background-color: rgb(96, 120, 228);
+  border: 2px solid black;
+  top: 3px;
+  text-align: center;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.bottom {
+  width: 100%;
+  height: 150px;
+  margin: auto;
+}
+
+.bottom p {
+  font-size: 17px;
+  font-family: Verdana, Tahoma, sans-serif;
+  margin: 13px;
+  text-align: left;
+}
+
+.bottom .wall {
+  position: relative;
+  width: 76px;
+  height: 30px;
+  background-color: rgb(220, 220, 220);
+  border: 2px solid black;
+  left: 260px;
+}
