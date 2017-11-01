@@ -29,7 +29,19 @@ function start() {
 function lightDie() {
   life = 0;
   lose();
-  this.style.backgroundColor = "red";
+  if (this.className.indexOf("left") != -1) {
+    var u = document.getElementsByClassName("left");
+    for (var i = 0; i < u.length; i++) {
+      u[i].style.backgroundColor = "red";
+    }
+  } else if (this.className.indexOf("right") != -1) {
+    var u = document.getElementsByClassName("right");
+    for (var i = 0; i < u.length; i++) {
+      u[i].style.backgroundColor = "red";
+    }
+  } else {
+    this.style.backgroundColor = "red";
+  }
   document.getElementsByClassName("maze")[0].onmouseleave = lightColor;
 }
 

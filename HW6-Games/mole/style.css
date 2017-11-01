@@ -1,0 +1,63 @@
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.positioner {
+  height: 100%;
+  width: 800px;
+  margin: auto;
+}
+
+strong {
+  font-size: 25px;
+}
+
+.title {
+  text-align: center;
+  font-size: 15px;
+  font-family: Verdana, Tahoma, sans-serif;
+}
+
+.screen {
+  position: relative;
+  width: 350px;
+  height: 50px;
+  font-size: 15px;
+  font-family: Verdana, Tahoma, sans-serif;
+  margin: auto;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+  text-align: right;
+}
+
+.mole {
+  width: 300px;
+  position: relative;
+  top: 30px;
+  margin: auto;
+  text-align: center;
+}
+
+.instructions {
+  position: relative;
+  top: 60px;
+  width: 600px;
+  font-size: 14px;
+  font-family: Verdana, Tahoma, sans-serif;
+  margin: auto;
+}
+
+.instructions strong {
+  font-size: 14px;
+}
+
+.cell {}
