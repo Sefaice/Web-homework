@@ -16,12 +16,52 @@ body {
   height: 160px;
 }
 
-.top p {
+.top .upper {
   font-size: 22px;
   font-family: Verdana, Tahoma, sans-serif;
   text-align: center;
   margin-top: 13px;
   margin-bottom: 0;
+}
+
+.oldTextOne {
+  font-size: 22px;
+  font-family: Verdana, Tahoma, sans-serif;
+  text-align: center;
+  margin-top: 13px;
+  margin-bottom: 0;
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.oldTextTwo {
+  font-size: 17px;
+  font-family: Verdana, Tahoma, sans-serif;
+  text-align: center;
+  margin-top: 13px;
+  margin-bottom: 0;
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.oneText {
+  font-size: 22px;
+  font-family: Verdana, Tahoma, sans-serif;
+  text-align: center;
+  margin-top: 13px;
+  margin-bottom: 0;
+  opacity: 1;
+  transition: opacity 1s;
+}
+
+.twoText {
+  font-size: 17px;
+  font-family: Verdana, Tahoma, sans-serif;
+  text-align: center;
+  margin-top: 13px;
+  margin-bottom: 0;
+  opacity: 1;
+  transition: opacity 1s;
 }
 
 .middle {

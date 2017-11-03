@@ -1,5 +1,6 @@
 var life; //判断是否结束
 var cheatBool; //是否作弊
+var boolChoose = -1; //选择上次是作弊了还是输了
 
 window.onload = function() {
   document.getElementsByClassName("start")[0].onmouseover = start;
@@ -9,8 +10,11 @@ function start() {
   life = 1;
   cheatBool = 0;
   lightColor(); //初始化
-  document.getElementsByClassName("text")[0].innerText = "";
-  document.getElementsByClassName("text")[0].style.fontSize = "22px";
+  if (boolChoose == 1) {
+    document.getElementById("text").className = "oldTextOne";
+  } else if (boolChoose == 2)
+    document.getElementById("text").className = "oldTextTwo";
+  boolChoose = -1;
 
   var light = document.getElementsByClassName("light");
   for (var i = 0; i < light.length; i++) {
@@ -58,7 +62,9 @@ function darkDie() {
 }
 
 function lose() {
-  document.getElementsByClassName("text")[0].innerText = "You Lose";
+  document.getElementById("text").innerText = "You Lose";
+  document.getElementById("text").className = "oneText";
+  boolChoose = 1;
 }
 
 function cheat() {
@@ -67,10 +73,13 @@ function cheat() {
 
 function end() {
   if (cheatBool == 1 && life == 1) {
-    document.getElementsByClassName("text")[0].innerText = "Don't cheat, you should start from the 'S' and move to the 'E' inside the maze!";
-    document.getElementsByClassName("text")[0].style.fontSize = "17px";
+    document.getElementById("text").innerText = "Don't cheat, you should start from the 'S' and move to the 'E' inside the maze!";
+    document.getElementById("text").className = "twoText";
+    boolChoose = 2;
   } else if (life == 1) {
-    document.getElementsByClassName("text")[0].innerText = "You Win!";
+    document.getElementById("text").innerText = "You Win!";
+    document.getElementById("text").className = "oneText";
+    boolChoose = 1;
   }
 
   var light = document.getElementsByClassName("light");
