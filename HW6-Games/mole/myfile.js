@@ -7,7 +7,6 @@ var clock;
 window.onload = function() {
   initialize();
   document.getElementsByClassName("start")[0].onclick = start;
-  document.getElementsByClassName("aa")[0].focus();
 }
 
 function initialize() {
@@ -60,7 +59,7 @@ function end() {
 function fresh() {
   var cell = document.getElementsByClassName("cell");
   x = random();
-  cell[x].focus();
+  cell[x].checked = true;
 }
 
 function countDown() {
@@ -74,10 +73,10 @@ function countDown() {
 function judge() {
   var cell = document.getElementsByClassName("cell");
   if (this == cell[x]) {
+    cell[x].checked = false;
     add();
     fresh();
   } else {
-    cell[x].focus();
     minus();
   }
 }

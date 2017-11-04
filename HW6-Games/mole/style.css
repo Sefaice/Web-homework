@@ -42,7 +42,7 @@ strong {
 .mole {
   width: 300px;
   position: relative;
-  top: 30px;
+  top: 10px;
   margin: auto;
   text-align: center;
 }
@@ -60,4 +60,7 @@ strong {
   font-size: 14px;
 }
 
-.cell {}
+.cell {
+  width: 20px;
+  height: 20px;
+}

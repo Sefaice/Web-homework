@@ -9,7 +9,6 @@ window.onload = function() {
 function start() {
   life = 1;
   cheatBool = 0;
-  lightColor(); //初始化
   if (boolChoose == 1) {
     document.getElementById("text").className = "oldTextOne";
   } else if (boolChoose == 2)
@@ -26,7 +25,9 @@ function start() {
     dark[i].addEventListener("mouseover", darkDie);
   }
 
+
   document.getElementsByClassName("maze")[0].onmouseleave = cheat;
+  document.getElementsByClassName("maze")[0].addEventListener("mouseleave", backColor);
   document.getElementsByClassName("end")[0].addEventListener("mouseover", end);
 }
 
@@ -46,19 +47,29 @@ function lightDie() {
   } else {
     this.style.backgroundColor = "red";
   }
-  document.getElementsByClassName("maze")[0].onmouseleave = lightColor;
 }
 
-function lightColor() {
+function backColor() {
   var light = document.getElementsByClassName("light");
   for (var i = 0; i < light.length; i++) {
     light[i].style.backgroundColor = "rgb(220, 220, 220)";
+  }
+  var dark = document.getElementsByClassName("dark");
+  for (var i = 0; i < dark.length; i++) {
+    dark[i].style.backgroundColor = "rgb(220, 220, 220)";
   }
 }
 
 function darkDie() {
   life = 0;
   lose();
+  if (this.className.indexOf("zuo") != -1) {
+    document.getElementsByClassName("zuo")[0].style.backgroundColor = "red";
+  } else if (this.className.indexOf("zhong") != -1) {
+    document.getElementsByClassName("zhong")[0].style.backgroundColor = "red";
+  } else {
+    document.getElementsByClassName("you")[0].style.backgroundColor = "red";
+  }
 }
 
 function lose() {
