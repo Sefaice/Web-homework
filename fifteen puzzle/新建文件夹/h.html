@@ -1,0 +1,32 @@
+<html>
+
+<body>
+  <div class="a">
+  </div>
+</body>
+
+<style>
+.a{
+  width:200px;
+  height:200px;
+  background-color: red;
+  opacity: 1;
+}
+
+.b{
+  width:200px;
+  height:200px;
+  margin-left: 200px;
+  background-color: red;
+  transition: all 1s ease-in-out;
+  opacity: 1;
+}
+</style>
+
+<script>
+document.getElementsByClassName("a")[0].onclick=function(){
+  this.className="b";
+}
+</script>
+
+</html>
