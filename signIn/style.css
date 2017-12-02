@@ -1,0 +1,80 @@
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-size: 20px;
+  font-family: sans-serif;
+}
+
+.positioner {
+  position: relative;
+  margin: auto;
+  top: 120px;
+}
+
+input[type=text] {
+  width: 250px;
+  height: 20px;
+  margin-top: 15px;
+  font-family: sans-serif;
+  font-size: 15px;
+  padding: 5px;
+}
+
+span {
+  position: absolute;
+  float: left;
+  margin-top: 22px;
+  font-size: 12px;
+  color: red;
+  font-family: sans-serif;
+}
+
+#reset {
+  position: relative;
+  right: 15px;
+  width: 80px;
+  height: 33px;
+  margin-top: 15px;
+  font-size: 17px;
+  font-family: sans-serif;
+  border: 1px solid white;
+  transition: all 0.3s ease-in-out;
+  background-color: rgb(220, 220, 220);
+}
+
+#submit {
+  position: relative;
+  left: 15px;
+  width: 80px;
+  height: 33px;
+  margin-top: 15px;
+  font-size: 17px;
+  font-family: sans-serif;
+  border: 1px solid white;
+  transition: all 0.3s ease-in-out;
+  background-color: rgb(220, 220, 220);
+}
+
+#reset:hover {
+  background-color: rgb(230, 230, 230);
+  border:1px solid grey;
+}
+
+#submit:hover {
+  background-color: rgb(230, 230, 230);
+  border:1px solid grey;
+}
+
+.cube {
+  position: relative;
+  left: 44%;
+  width: 500px;
+  text-align: left;
+}
+
+p {
+  margin-top: 18px;
+}
