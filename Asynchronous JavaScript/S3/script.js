@@ -3,6 +3,12 @@ $(document).ready(function() {
   var _mask, _history, _message, _setting, _sign; //for click-check
   var bubble;
 
+  var maskXhr = "",
+    historyXhr = "",
+    messageXhr = "",
+    settingXhr = "",
+    signXhr = "";
+
   $(".apb").hover(function() {
     initial();
   });
@@ -13,7 +19,7 @@ $(document).ready(function() {
 
     $(".mask-unread").show(300);
     $(".mask-unread").text("...");
-    $.ajax({
+    maskXhr = $.ajax({
       url: "/S3/mask",
       type: "GET",
       async: true,
@@ -27,7 +33,7 @@ $(document).ready(function() {
 
     $(".history-unread").show(300);
     $(".history-unread").text("...");
-    $.ajax({
+    historyXhr = $.ajax({
       url: "/S3/history",
       type: "GET",
       async: true,
@@ -41,7 +47,7 @@ $(document).ready(function() {
 
     $(".message-unread").show(300);
     $(".message-unread").text("...");
-    $.ajax({
+    messageXhr = $.ajax({
       url: "/S3/message",
       type: "GET",
       async: true,
@@ -55,7 +61,7 @@ $(document).ready(function() {
 
     $(".setting-unread").show(300);
     $(".setting-unread").text("...");
-    $.ajax({
+    settingXhr = $.ajax({
       url: "/S3/setting",
       type: "GET",
       async: true,
@@ -71,7 +77,7 @@ $(document).ready(function() {
     dark("sign");
     $(".sign-unread").show(300);
     $(".sign-unread").text("...");
-    $.ajax({
+    signXhr = $.ajax({
       url: "/S3/sign",
       type: "GET",
       async: true,
@@ -100,6 +106,21 @@ $(document).ready(function() {
     $(".mask-unread, .history-unread, .setting-unread, .sign-unread, .message-unread").hide();
     light("null");
     $(".result").text("");
+    if (maskXhr != "") {
+      maskXhr.abort();
+    }
+    if (historyXhr != "") {
+      historyXhr.abort();
+    }
+    if (messageXhr != "") {
+      messageXhr.abort();
+    }
+    if (settingXhr != "") {
+      settingXhr.abort();
+    }
+    if (signXhr != "") {
+      signXhr.abort();
+    }
   }
 
   //trigger click会有背景色的渐变，但是用函数调用就不会有，为什么？？？？
@@ -113,11 +134,11 @@ $(document).ready(function() {
   }
 
   function dark() {
-      $(".mask").css("background-color", "rgb(150, 150, 150)");
-      $(".history").css("background-color", "rgb(150, 150, 150)");
-      $(".message").css("background-color", "rgb(150, 150, 150)");
-      $(".setting").css("background-color", "rgb(150, 150, 150)");
-      $(".sign").css("background-color", "rgb(150, 150, 150)");
+    $(".mask").css("background-color", "rgb(150, 150, 150)");
+    $(".history").css("background-color", "rgb(150, 150, 150)");
+    $(".message").css("background-color", "rgb(150, 150, 150)");
+    $(".setting").css("background-color", "rgb(150, 150, 150)");
+    $(".sign").css("background-color", "rgb(150, 150, 150)");
   }
 
   function light(button) {

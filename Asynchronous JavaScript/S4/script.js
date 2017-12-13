@@ -5,6 +5,12 @@ $(document).ready(function() {
   var arr = new Array();
   var count; // click button in order
 
+  var maskXhr = "",
+    historyXhr = "",
+    messageXhr = "",
+    settingXhr = "",
+    signXhr = "";
+
   $(".apb").hover(function() {
     initial();
   });
@@ -64,6 +70,21 @@ $(document).ready(function() {
     light("null");
     $(".result").text("");
     $(".list").text("");
+    if (maskXhr != "") {
+      maskXhr.abort();
+    }
+    if (historyXhr != "") {
+      historyXhr.abort();
+    }
+    if (messageXhr != "") {
+      messageXhr.abort();
+    }
+    if (settingXhr != "") {
+      settingXhr.abort();
+    }
+    if (signXhr != "") {
+      signXhr.abort();
+    }
   }
 
   function randomList() {
@@ -90,7 +111,7 @@ $(document).ready(function() {
       dark(this);
       $(".mask-unread").show(300);
       $(".mask-unread").text("...");
-      $.ajax({
+      maskXhr = $.ajax({
         url: "/S4/mask",
         type: "GET",
         async: true,
@@ -111,7 +132,7 @@ $(document).ready(function() {
       dark(this);
       $(".mask-unread").show(300);
       $(".mask-unread").text("...");
-      $.ajax({
+      maskXhr = $.ajax({
         url: "/S4/mask",
         type: "GET",
         async: true,
@@ -133,7 +154,7 @@ $(document).ready(function() {
       dark(this);
       $(".history-unread").show(300);
       $(".history-unread").text("...");
-      $.ajax({
+      historyXhr = $.ajax({
         url: "/S4/history",
         type: "GET",
         async: true,
@@ -154,7 +175,7 @@ $(document).ready(function() {
       dark(this);
       $(".history-unread").show(300);
       $(".history-unread").text("...");
-      $.ajax({
+      historyXhr = $.ajax({
         url: "/S4/history",
         type: "GET",
         async: true,
@@ -176,7 +197,7 @@ $(document).ready(function() {
       dark(this);
       $(".message-unread").show(300);
       $(".message-unread").text("...");
-      $.ajax({
+      messageXhr = $.ajax({
         url: "/S4/message",
         type: "GET",
         async: true,
@@ -198,7 +219,7 @@ $(document).ready(function() {
       dark(this);
       $(".message-unread").show(300);
       $(".message-unread").text("...");
-      $.ajax({
+      messageXhr = $.ajax({
         url: "/S4/message",
         type: "GET",
         async: true,
@@ -209,6 +230,7 @@ $(document).ready(function() {
           $(".message").css("background-color", "rgb(150, 150, 150)");
           sum += parseInt(num);
           isOver();
+          triggerAI();
         }
       });
     }
@@ -219,7 +241,7 @@ $(document).ready(function() {
       dark(this);
       $(".setting-unread").show(300);
       $(".setting-unread").text("...");
-      $.ajax({
+      settingXhr = $.ajax({
         url: "/S4/setting",
         type: "GET",
         async: true,
@@ -241,7 +263,7 @@ $(document).ready(function() {
       dark(this);
       $(".setting-unread").show(300);
       $(".setting-unread").text("...");
-      $.ajax({
+      settingXhr = $.ajax({
         url: "/S4/setting",
         type: "GET",
         async: true,
@@ -263,7 +285,7 @@ $(document).ready(function() {
       dark(this);
       $(".sign-unread").show(300);
       $(".sign-unread").text("...");
-      $.ajax({
+      signXhr = $.ajax({
         url: "/S4/sign",
         type: "GET",
         async: true,
@@ -284,7 +306,7 @@ $(document).ready(function() {
       dark(this);
       $(".sign-unread").show(300);
       $(".sign-unread").text("...");
-      $.ajax({
+      signXhr = $.ajax({
         url: "/S4/sign",
         type: "GET",
         async: true,

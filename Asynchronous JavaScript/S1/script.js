@@ -3,6 +3,12 @@ $(document).ready(function() {
   var _mask, _history, _message, _setting, _sign; //for click-check
   var bubble;
 
+  var maskXhr = "",
+    historyXhr = "",
+    messageXhr = "",
+    settingXhr = "",
+    signXhr = "";
+
   $(".apb").hover(function() {
     initial();
   });
@@ -23,6 +29,21 @@ $(document).ready(function() {
     $(".mask-unread, .history-unread, .setting-unread, .sign-unread, .message-unread").hide();
     light("null");
     $(".result").text("");
+    if (maskXhr != "") {
+      maskXhr.abort();
+    }
+    if (historyXhr != "") {
+      historyXhr.abort();
+    }
+    if (messageXhr != "") {
+      messageXhr.abort();
+    }
+    if (settingXhr != "") {
+      settingXhr.abort();
+    }
+    if (signXhr != "") {
+      signXhr.abort();
+    }
   }
 
   $(".mask").click(function() {
@@ -30,7 +51,7 @@ $(document).ready(function() {
       dark(this);
       $(".mask-unread").show(300);
       $(".mask-unread").text("...");
-      $.ajax({
+      maskXhr = $.ajax({
         url: "/S1/mask",
         type: "GET",
         async: true,
@@ -51,7 +72,7 @@ $(document).ready(function() {
       dark(this);
       $(".history-unread").show(300);
       $(".history-unread").text("...");
-      $.ajax({
+      historyXhr = $.ajax({
         url: "/S1/history",
         type: "GET",
         async: true,
@@ -72,7 +93,7 @@ $(document).ready(function() {
       dark(this);
       $(".message-unread").show(300);
       $(".message-unread").text("...");
-      $.ajax({
+      messageXhr = $.ajax({
         url: "/S1/message",
         type: "GET",
         async: true,
@@ -93,7 +114,7 @@ $(document).ready(function() {
       dark(this);
       $(".setting-unread").show(300);
       $(".setting-unread").text("...");
-      $.ajax({
+      settingXhr = $.ajax({
         url: "/S1/setting",
         type: "GET",
         async: true,
@@ -114,7 +135,7 @@ $(document).ready(function() {
       dark(this);
       $(".sign-unread").show(300);
       $(".sign-unread").text("...");
-      $.ajax({
+      signXhr = $.ajax({
         url: "/S1/sign",
         type: "GET",
         async: true,
