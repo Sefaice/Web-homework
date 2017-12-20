@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>index</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" style="text/css" href="style.css">
+  <script src="script.js"></script>
+  <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+</head>
+
+<body>
+  <div class="positioner">
+    <p>用户注册</p>
+    <form method="post" onsubmit="return subTest()">
+      <input type="text" name="username" id="username" placeholder="请输入用户名" autocomplete="off">
+      <span class="vUsername"></span> <br>
+
+      <input type="text" name="id" id="id" placeholder="请输入学号" autocomplete="off">
+      <span class="vId"></span> <br>
+
+      <input type="text" name="tel" id="tel" placeholder="请输入电话" autocomplete="off">
+      <span class="vTel"></span> <br>
+
+      <input type="text" name="email" id="email" placeholder="请输入邮箱" autocomplete="off">
+      <span class="vEmail"></span> <br>
+
+      <input type="reset" value="重置" id="reset">
+      <input type="submit" value="提交" id="submit">
+      <br>
+    </form>
+  </div>
+</body>
+
+</html>
