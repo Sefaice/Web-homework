@@ -1,0 +1,35 @@
+extends layout
+
+block content
+  div(class="positioner")
+    P 用户注册
+    form(method="post" onsubmit="return subTest()" action="http://localhost:3000/regist")
+      input(type="text" name="username" id="username" placeholder="请输入用户名" autocomplete="off")
+      span(class="vUsername")
+      br
+      
+      input(type="text" name="password" id="password" placeholder="请输入密码" autocomplete="off")
+      span(class="vPassword")
+      br
+      
+      input(type="text" name="repeat-password" id="repeat-password" placeholder="请再次输入密码" autocomplete="off")
+      span(class="vRepeatPassword")
+      br
+
+      input(type="text" name="id" id="id" placeholder="请输入学号" autocomplete="off")
+      span(class="vId")
+      br
+      
+      input(type="text" name="tel" id="tel" placeholder="请输入电话" autocomplete="off")
+      span(class="vTel")
+      br
+
+      input(type="text" name="email" id="email" placeholder="请输入邮箱" autocomplete="off")
+      span(class="vEmail")
+      br
+
+      input(type="reset" value="重置" id="reset")
+      input(type="submit" value="提交" id="submit")
+      br
+      
+  script(type='text/javascript' src='javascripts/signup.js')

@@ -6,3 +6,7 @@
 *.pdf
 *.tdl
 Asynchronous JavaScript/S4/assets/.DS_Store
+signin/node_modules/.bin/acorn
+signin/data/
+*.wt
+signin/node_modules/_bson@1.0.4@bson/lib/bson/regexp.js
