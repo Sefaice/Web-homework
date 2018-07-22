@@ -1,35 +1,31 @@
-body{
-  background-image: url("http://www.omnomsauce.com/wp-content/uploads/2013/06/cherry-pie_20130705_0006.jpg");
-  background-size:cover;
-  background-repeat:no-repeat;
+body {
+    background-image: url("http://www.omnomsauce.com/wp-content/uploads/2013/06/cherry-pie_20130705_0006.jpg");
+    background-clip: content-box;
+    background-origin: border-box;
+    overflow: auto;
 }
 
-#hello{
-  position:absolute;
-  top:10%;
-  left:0;
-  text-align:center;
-  width:100%;
-  font-size:130px;
-  color:#c3272b
+#hello {
+    position: relative;
+    margin-top: 15%;
+    text-align: center;
+    font-size: 100px;
+    color: #c3272b
 }
 
-#link{
-  position:absolute;
-  top:65%;
-  left:0;
-  text-align:center;
-  width:100%;
-  font-size:35px;
-  color:#c3272b;
-  text-decoration:underline
+#link {
+    position: relative;
+    margin-top: 5%;
+    text-align: center;
+    font-size: 35px;
+    color: #c3272b;
+    text-decoration: underline
 }
 
-#maker{
-  position:absolute;
-  bottom:0;
-  text-align:center;
-  width:100%;
-  font-size:25px;
-  color:#c3272b
+#maker {
+    position: relative;
+    margin-top:8%;
+    text-align: center;
+    font-size: 25px;
+    color: #c3272b
 }

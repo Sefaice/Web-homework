@@ -28,8 +28,13 @@ module.exports = function(db) {
     var regEmail = /^[a-zA-Z0-9_-]+@([a-zA-Z0-9_]+\.)+[a-zA-Z]{2,4}$/;
     if (regUsername.test(req.body.username) && regId.test(req.body.id) &&
       regTel.test(req.body.tel) && regEmail.test(req.body.email)) {
-      if(userManager.checkUser(user)!=0){//exist
-
+      if(userManager.checkUser(user)){//not exist
+        req.session.user=user;
+        userManager.createUser(user);
+        res.redirect("/information");
+      }else{
+        mUsername="用户名已存在";
+        res.redirect("/regist");
       }
     }
   });

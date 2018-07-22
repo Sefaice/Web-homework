@@ -1,0 +1,5 @@
+继续用sse，不过是信息用不同函数分出来
+
+mongodb查找用法，promise用法
+
+能存储、查询、就能写上signin
