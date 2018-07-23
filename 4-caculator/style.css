@@ -1,0 +1,70 @@
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#positioner {
+  width: 400px;
+  height: 100%;
+  margin: auto;
+}
+
+#container {
+  position: absolute;
+  height: 400px;
+  width: 400px;
+  top: 150px;
+  border: 3px solid black;
+}
+
+#top {
+  width: 400px;
+  height: 50px;
+}
+
+#bottom {
+  width: 400px;
+  height: 350px;
+}
+
+#screen {
+  position: absolute;
+  width: 350px;
+  height: 35px;
+  margin-left: 21px;
+  top: 12px;
+  border: 2px solid grey;
+  overflow: hidden;
+}
+
+#screen p {
+  float: right;
+  margin-top: 3px;
+  margin-right: 5px;
+  font-size: 25px;
+}
+
+.column {
+  float: left;
+  height: 350px;
+  width: 75px;
+  margin-left: 19px;
+}
+
+.column div {
+  background-color: rgb(217, 217, 217);
+  width: 75px;
+  height: 45px;
+  border: 1px solid grey;
+  margin-top: 20px;
+  text-align: center;
+  font-size: 20px;
+  line-height: 45px;
+  font-weight: bold;
+}
+
+.column div:active {
+  background-color: rgb(152, 152, 152);
+}
