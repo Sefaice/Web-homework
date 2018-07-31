@@ -3,3 +3,5 @@
 mongodb查找用法，promise用法
 
 能存储、查询、就能写上signin
+
+ok

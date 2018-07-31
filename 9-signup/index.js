@@ -18,6 +18,7 @@ var _username = new Array(),
   _email = new Array(); //存储信息...
 var i = 0;
 
+//
 //异步怎样在第一次打开页面加载？
 
 http.createServer(function(request, response) {
@@ -98,7 +99,7 @@ function router(response, url){
       response.writeHead(200, {
         "Content-Type": "text/html"
       });
-      var data = fs.readFileSync("index.html"); //同步读取文件
+      var data = fs.readFileSync("index.html"); //同步读取文件，why?
       response.write(data.toString());
       break;
     case "/style.css":

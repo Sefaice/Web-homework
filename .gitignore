@@ -6,6 +6,6 @@
 *.pdf
 *.tdl
 Asynchronous JavaScript/S4/assets/.DS_Store
-signin/node_modules/
+/node_modules/
 signin/data/
 *.wt
